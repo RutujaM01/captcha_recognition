@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OCR Web App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0; /* Set a background color */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+        h1 {
+            color: #333; /* Set text color */
+        }
+        #fileInput {
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #be24dd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #0074d9; /* Set button background color */
+            color: #fff; /* Set button text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3; /* Change button color on hover */
+        }
+        #output {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>OCR Web App</h1>
+    <br><br>
+    <form method="post" action="/process_image" enctype="multipart/form-data">
+        <input type="file" name = file id="fileInput" accept=".png, .jpg, .jpeg" /><br><br>
+        <br>
+        <button onclick="processImage()">Process Image</button><br><br>
+        <h3> Prediction: {{predict}}<h3>
+        <div id="output"></div>
+        <script src="script.js"></script>
+    </form>
+</body>
+</html>
